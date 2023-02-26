@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="./style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <script type="module" src="/main.js" ></script>
+    <script src="pagination.js"></script>
     <title>Vite App</title>
   </head>
   <body>
     <div class="top-nav">
       <a class="active" href="#" >Adopt A Cat</a>
       <div class="search-container">
-        <form role="search" id="form">
-          <input type="search" id="query" name="q" placeholder="Search by Location...">
+        <form role="search" id="form" form autocomplete="off">
+          <input type="search" id="query" name="q" placeholder="Search by Zip...">
         </form>
       </div>
     </div>
@@ -22,22 +24,52 @@
     </div>
     <div class="footer">
       <div class="pagination">
-        <button class="btn1">prev</button>
+        <button class="btn1" onclick="backBtn()">prev</button>
         <ul>
-          <li class="link" value="1">1</li>
-          <li class="link" value="2">2</li>
-          <li class="link" value="3">3</li>
-          <li class="link" value="4">4</li>
-          <li class="link" value="5">5</li>
-          <li class="link" value="6">6</li>
-          <li class="link" value="7">7</li>
-          <li class="link" value="8">8</li>
-          <li class="link" value="9">9</li>
-          <li class="link" value="10">10</li>
+          <li class="link active" value="1" onclick="activeLink()">1</li>
+          <li class="link" value="2" onclick="activeLink()">2</li>
+          <li class="link" value="3" onclick="activeLink()">3</li>
+          <li class="link" value="4" onclick="activeLink()">4</li>
+          <li class="link" value="5" onclick="activeLink()">5</li>
+          <li class="link" value="6" onclick="activeLink()">6</li>
+          <li class="link" value="7" onclick="activeLink()">7</li>
+          <li class="link" value="8" onclick="activeLink()">8</li>
+          <li class="link" value="9" onclick="activeLink()">9</li>
+          <li class="link" value="10" onclick="activeLink()">10</li>
         </ul>
-        <button class="btn2">next</button>
+        <button class="btn2" id="nextBtn" onclick="nextBtn()">next</button>
       </div>
     </div>
-    <script type="module" src="/main.js"></script>
+    <!-- <script>
+      let link = document.getElementsByClassName("link")
+      let currentValue = 1
+
+      function activeLink(){
+        for (l of link){
+          l.classList.remove("active")
+        }
+        event.target.classList.add("active")
+        currentValue = event.target.value
+      }
+
+      function backBtn(){
+        if(currentValue > 1){
+          for (l of link){
+            l.classList.remove("active")
+          }
+          currentValue--
+          link[currentValue - 1].classList.add("active")
+        }
+      }
+      function nextBtn(){
+        if(currentValue < 10){
+          for (l of link){
+            l.classList.remove("active")
+          }
+          currentValue++
+          link[currentValue - 1].classList.add("active")
+        }
+      }
+    </script> -->
   </body>
 </html>

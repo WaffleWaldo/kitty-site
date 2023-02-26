@@ -1,0 +1,111 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set some global styles */
+  body {
+    background-color: #151320;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .top-nav {
+    background-color: #3f51b5;
+    padding: 10px;
+  }
+  
+  .top-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .top-nav a.active {
+    font-weight: bold;
+  }
+  
+  .cat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cat-image-container {
+    margin-bottom: 20px;
+  }
+  
+  .cat-image-container img {
+    border-radius: 6px 6px 0px 0px;
+    width: 100%;
+    height: auto;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  
+  .cat-info {
+    text-align: center;
+  }
+  
+  .cat-info h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .cat-info hr {
+    width: 50%;
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  .cat-info p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .cat-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #contact-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  #contact-container {
+    text-align: center;
+  }
+  
+  #cat-email, #cat-phone {
+    display: inline-block;
+    margin: 10px;
+    font-size: 18px;
+    color: #3f51b5;
+    text-decoration: none;
+  }
+  
+  #cat-location {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #555;
+  }
+  

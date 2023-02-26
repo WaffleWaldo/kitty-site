@@ -1,16 +1,20 @@
-const APIKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJCTlQ2ejhsMlBRc1BOQVF5a2VuTFRmS29Qa2hIaDlJNWd2SUJiblF6eWhRZFowQUNnVSIsImp0aSI6ImQ1NzFjOWI1NTc0NDQzZDU4YTBlZWZkMjI1ZGQ4MWY4NDUyNDZlZjI4MDc0Y2MzNGJlNjA3ZGQyOGM0ZjUzMDgxOTZlYTIwYWZkNzRkMDE1IiwiaWF0IjoxNjc3MzI4ODg5LCJuYmYiOjE2NzczMjg4ODksImV4cCI6MTY3NzMzMjQ4OSwic3ViIjoiIiwic2NvcGVzIjpbXX0.nDAaYE9H6zqMDU33kJA-yjEiTDEw08fnaVhtvKaBbTPtLz9OjFouYn2z79u3KFlJZw8LUB-6yRL86UCra8fGY9DWyc9vDb4HuFJ3HD8NAzkXk3hBLzXwtKcSijkj3nFkLPbxrKsgNXX274ncgRC4VwRi49xVjWKmJHzZs6WGau5hdyoC9XGN6aJuLGorApX65NLDG0zFlqaY2BjaFB4NyHPkY4UtXqnnMCuBHk_eq5rgK1air9ou1IpwurZ7EuQ5odJ-5aGs9zcMBWGKuyRv2lYlYyJjCpGRS_Or_CiOeSB4VP7eGqX-lb7RjUeDV2pkAhhypL7vd0nUE1R6XnCLNw"
-const URL = `https://api.petfinder.com/v2/animals?type=cat&status=adoptable&page=1`
-const searchURL = 'https://api.petfinder.com/v2/animals?type=cat&status=adoptable'
+
+
+const APIKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJCTlQ2ejhsMlBRc1BOQVF5a2VuTFRmS29Qa2hIaDlJNWd2SUJiblF6eWhRZFowQUNnVSIsImp0aSI6Ijk3NTA4OTllNGUzNTQxOTE3ZDZmNzAxMGM4NmI5ZDc0MzlkODE5YWQwNjVlZTQ3NDE2ZmRiMDU4NDZiYjhlMWZiNzEzZTdmM2Q0ZWU1NTA2IiwiaWF0IjoxNjc3NDAwNjAyLCJuYmYiOjE2Nzc0MDA2MDIsImV4cCI6MTY3NzQwNDIwMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.mclp882MxGDpKrYG9xWFt4Vq0Z7D2M1XnOiRyvmc77zXmgzaf2XzuHJzwWwYgZ5aFMaP08HC6ZEBScKnQgskxw4rrfgJRZ6OHxyAs_1VbRV4cAU1LXK3gHjyVqBb_h62tQshlxGr1xLG2lQTVbVDQwUpLY8PxWhR8yWfqMIRkpVKW2Znkr70thP34BUiPsfwU0ZoQd6B2y-b1p7hMmdThcLzJrvdHJpHzk56rfRn11Pp67KwuddqAxBd7X-aYgRO1P2b8ej7gGPOw5BHqyMY2psh5GuTRKz6aKSgA4FddLbYhu8YSylMVHmsJtK6s5ojZDkHaUCy069WrtToV5gMjQ"
+let URL = `https://api.petfinder.com/v2/animals?type=cat&status=adoptable&limit=50`
+const searchURL = 'https://api.petfinder.com/v2/animals?type=cat&status=adoptable&limit=50&location='
+
 
 const form = document.getElementById("form")
 const search = document.getElementById("query")
 const main = document.getElementById("cat-container")
 
+
 function fetchCats(url) {
     console.log(url)
     fetch(url, {
         headers: {
-            Authorization: `Bearer ${APIKey}`
+            Authorization: `Bearer ${APIKey}`,
         }
     })
     .then(response => response.json())
@@ -40,6 +44,16 @@ function fetchCats(url) {
     });
 }
 
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    main.innerHTML = ''
+    const searchItem = search.value
+    
+    if(searchItem) {
+        fetchCats(searchURL+encodeURIComponent(searchItem))
+        search.value = ''
+    }
+})
 
 fetchCats(URL)
 
