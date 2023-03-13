@@ -1,6 +1,4 @@
-
-
-const APIKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJCTlQ2ejhsMlBRc1BOQVF5a2VuTFRmS29Qa2hIaDlJNWd2SUJiblF6eWhRZFowQUNnVSIsImp0aSI6Ijk3NTA4OTllNGUzNTQxOTE3ZDZmNzAxMGM4NmI5ZDc0MzlkODE5YWQwNjVlZTQ3NDE2ZmRiMDU4NDZiYjhlMWZiNzEzZTdmM2Q0ZWU1NTA2IiwiaWF0IjoxNjc3NDAwNjAyLCJuYmYiOjE2Nzc0MDA2MDIsImV4cCI6MTY3NzQwNDIwMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.mclp882MxGDpKrYG9xWFt4Vq0Z7D2M1XnOiRyvmc77zXmgzaf2XzuHJzwWwYgZ5aFMaP08HC6ZEBScKnQgskxw4rrfgJRZ6OHxyAs_1VbRV4cAU1LXK3gHjyVqBb_h62tQshlxGr1xLG2lQTVbVDQwUpLY8PxWhR8yWfqMIRkpVKW2Znkr70thP34BUiPsfwU0ZoQd6B2y-b1p7hMmdThcLzJrvdHJpHzk56rfRn11Pp67KwuddqAxBd7X-aYgRO1P2b8ej7gGPOw5BHqyMY2psh5GuTRKz6aKSgA4FddLbYhu8YSylMVHmsJtK6s5ojZDkHaUCy069WrtToV5gMjQ"
+const APIKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJCTlQ2ejhsMlBRc1BOQVF5a2VuTFRmS29Qa2hIaDlJNWd2SUJiblF6eWhRZFowQUNnVSIsImp0aSI6IjRiYWJhZmYyODUwNGY2YTgxNDE1NTk3ZDJiYjc5ZmM3ZTkzZjE5OTExOTIyYzU5ZTZhNzQ4MWFiMmQ5MDc2NTQ3NDEwMWE5M2VmOWFhNDk2IiwiaWF0IjoxNjc3NDMwNjQ0LCJuYmYiOjE2Nzc0MzA2NDQsImV4cCI6MTY3NzQzNDI0NCwic3ViIjoiIiwic2NvcGVzIjpbXX0.jckwXV0MOOBRiXuXs5ecnF7sP2xmLzDCWlwncnwr8Hp0_eLxmNSxhD4MsQMPYm0zlQvOmWFJPJUMMbctmT80elXAMXxdY_fstmV451UHMVF0Hxg6YwlASpUR5gL2WhfsKqFdMoO5q0m6KtEreKGLIuiafTkhEu7w3aYcLHhG6mVXhl6edfx5IttqY9iueLpu9E6j4NG_DK8no_EV9a7_-senIyYb4OJ-w7xBGmRDqbZSEK1Xxbyaw-2BWSkA2N3kRrgGQOIopLcW9OfmYn0I1MmQeLEX4hOyK2xKW1PI6Nz_FeOfX2K-IToufZSNGbfT5EaZSN5ZPwWzcFF0aEfk8w"
 let URL = `https://api.petfinder.com/v2/animals?type=cat&status=adoptable&limit=50`
 const searchURL = 'https://api.petfinder.com/v2/animals?type=cat&status=adoptable&limit=50&location='
 
@@ -32,7 +30,7 @@ function fetchCats(url) {
                     <div class="details">
                         <h2>${cat.name}</h2>
                         <p>${cat.description === null ? `${cat.name} has no story to tell as of yet, maybe you can help create one for this cutie` : cat.description}</p>
-                        <a href="cat.html?id=${cat.id}">Details</a>
+                        <a href="../build/cat.html?id=${cat.id}">Details</a>
                     </div>
                 </div>
                 `;
@@ -56,4 +54,3 @@ form.addEventListener("submit", (e) => {
 })
 
 fetchCats(URL)
-
