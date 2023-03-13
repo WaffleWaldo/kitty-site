@@ -25,7 +25,7 @@ function fetchCats(url) {
             const catCard = `
                 <div class="card">
                     <div class="image-container">
-                        <img src="${cat.photos[0] === undefined ? "./cat-image.jpg" : cat.photos[0].medium}" alt="${cat.name}" alt="${cat.name}">
+                        <img src="${cat.photos[0] === undefined ? "../build/img/cat-image.jpg" : cat.photos[0].medium}" alt="${cat.name}" alt="${cat.name}">
                     </div>
                     <div class="details">
                         <h2>${cat.name}</h2>
